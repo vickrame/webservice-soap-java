@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+ 	<groupId>com.prios.ws</groupId>
+	<artifactId>prios-ws-TP4-services</artifactId>
+	<packaging>ejb</packaging>	
+	
+	<parent>
+		<groupId>com.zen.jee.fwk</groupId>
+		<artifactId>jee-fwk</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.ejb</artifactId>
+            <version>3.0</version>
+            <scope>provided</scope>
+        </dependency>   
+<dependency>
+	<groupId>javax.jms</groupId>
+	<artifactId>jms-api</artifactId>
+	<version>1.1-rev-1</version>
+</dependency>       
+	</dependencies>
+</project>

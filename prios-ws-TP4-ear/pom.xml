@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.prios.ws</groupId>
+	<artifactId>prios-ws-TP4-ear</artifactId>
+	<packaging>ear</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<parent>
+		<groupId>com.zen.jee.fwk</groupId>
+		<artifactId>jee-fwk</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<applicationXml>${project.build.directory}/application.xml</applicationXml>
+					<applicationName>prios-ws-TP4-ear</applicationName>
+					<generateApplicationXml>true</generateApplicationXml>
+					<initializeInOrder>true</initializeInOrder>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<security>
+						<security-role>
+							<description>droit de consultation des donnees</description>
+							<role-name>TEST_WS_CONSULT</role-name>
+						</security-role>
+						<security-role>
+							<description>droit d ecriture</description>
+							<role-name>TEST_WS_WRITE</role-name>
+						</security-role>
+					</security>
+					<modules>
+						<webModule>
+							<groupId>com.prios.ws</groupId>
+							<artifactId>prios-ws-TP4-web</artifactId>
+							<bundleFileName>prios-ws-TP4-web.war</bundleFileName>
+							<contextRoot>/prios-ws-TP4-web</contextRoot>
+						</webModule>
+						<!-- <ejbModule> <groupId>com.prios.ws</groupId> <artifactId>prios-ws-TP4-services</artifactId> 
+							</ejbModule> -->
+					</modules>
+
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>prios-ws-TP4-ear</finalName>
+	</build>
+
+	<!-- Define the versions of your ear components here -->
+	<dependencies>
+		<!-- services -->
+		<!-- <dependency> <groupId>com.prios.ws</groupId> <artifactId>prios-ws-TP4-services</artifactId> 
+			<type>ejb</type> <version>1.0-SNAPSHOT</version> </dependency> -->
+		<!-- Libs -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- WAR -->
+		<dependency>
+			<groupId>com.prios.ws</groupId>
+			<artifactId>prios-ws-TP4-web</artifactId>
+			<type>war</type>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

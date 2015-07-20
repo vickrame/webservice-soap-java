@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application-bnd xmlns="http://websphere.ibm.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://websphere.ibm.com/xml/ns/javaee http://websphere.ibm.com/xml/ns/javaee/ibm-application-bnd_1_1.xsd"
+	version="1.1">
+
+	<security-role name="UtilisateurConsultationRole">
+		<group name="TEST_WS_CONSULT" />
+	</security-role>
+
+	<security-role name="UtilisateurSaisitRole">
+		<group name="TEST_WS_WRITE" />
+	</security-role>
+
+</application-bnd>
